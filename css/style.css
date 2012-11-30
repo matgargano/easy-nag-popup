@@ -1,0 +1,49 @@
+.popup-overlay {
+    position:fixed;
+    top:0px;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    background-color: rgb(255, 255, 255);
+    opacity: 0.8; display: block;
+    z-index: 1001;
+}
+.popup-overlay-image{
+    position: fixed;
+    top:30px;
+    left:30px;
+    width:400px;
+    height:250px;
+    background-color:#fff;
+    border: 1px solid #000;
+    opacity: 1.0;
+    z-index: 1002;
+}
+
+.popup-lightsout {
+    z-index:1000;
+    position:absolute;
+    top:0;
+    left:0;
+    background:#000;
+    opacity:.8;
+}
+
+.popup-image {
+    position:fixed;
+}
+
+.popup-close {
+    background:url(../images/close.png);
+    height:22px;
+    width:22px;
+    position:fixed;
+    z-index:1002;
+    cursor:pointer;
+}
+
+
+.clearboth,
+.clear-both {
+    clear:both;
+}

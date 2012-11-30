@@ -1,0 +1,240 @@
+#poststuff .instructions ul {
+    list-style-type:disc;
+    padding-left:20px;
+    margin-top:0;
+}
+
+#push_close_button_wrap {
+    padding-top:15px;
+    border-top:1px solid #ccc;
+    margin-top:15px;
+}
+
+#push_close_button_wrap h2 {
+    margin-top:0;
+    margin-bottom:5px;
+    
+}
+
+
+#push_close_button_wrap .box-demo,
+#push_close_button_wrap .x-demo {
+    top:25px;
+}
+
+#push_close_button_wrap .box-demo {
+    position:absolute;
+    text-align:center;
+    line-height:100px;
+    left:10px;
+    width:200px;
+    height:100px;
+    background:#fff;
+    border:1px solid #000;
+    z-index:1;
+}
+#push_close_button_wrap > p {
+    margin-top:0;
+}
+#push_close_button_wrap #demo-wrap {
+    margin-top:20px;
+}
+#push_close_button_wrap #demo-wrap .inner {
+    position:relative;
+    margin:auto;
+    height:200px;
+    width:300px;
+}
+#push_close_button_wrap .x-demo {
+    position:absolute;
+    font-size:8px;
+    z-index:10;
+    left:210px;
+    width:10px;
+    line-height:10px;
+    height:10px;
+    background:#ccc;
+    border:1px solid #000;
+    border-radius:50%;
+    text-align:center;
+}
+#poststuff .instructions h4  {
+    margin-top:5px;
+    margin-bottom:10px;
+}
+#poststuff .instructions p {
+    margin-top:2px;
+    margin-bottom:2px;
+}
+
+
+#poststuff .instructions {
+    background: none repeat scroll 0 0 #FFFFE0;
+    border: 1px solid #E6DB55;
+    margin: 10px auto 20px auto;
+    padding: 5px 10px 10px;
+    width:95%;
+
+}
+
+.plugin-settings label,
+.plugin-settings input {
+    float:left;
+    margin-top:10px;
+}
+
+.plugin-settings label {
+    width:400px;
+    margin-right:10px;
+    
+}
+
+.plugin-settings input[type='checkbox'] {
+    width:20px;
+}
+
+.plugin-settings input {
+    width:200px;
+}
+.plugin-settings input#push_close_button {
+    width:75px;
+}
+
+.plugin-settings input#number_views {
+    width:50px;
+}
+
+.plugin-settings input#url {
+    width:550px;
+}
+
+.plugin-settings ul {
+    margin-left:25px;
+}
+
+.plugin-settings li  {
+    list-style-type:disc;
+    margin-left:10px;
+}
+
+.ui-spinner {position: relative}
+.ui-spinner-buttons {position: absolute}
+.ui-spinner-button {overflow: hidden}
+.ui-timepicker-div .ui-widget-header { margin-bottom: 8px; }
+.ui-timepicker-div dl { text-align: left; }
+.ui-timepicker-div dl dt { height: 25px; margin-bottom: -25px; }
+.ui-timepicker-div dl dd { margin: 0 10px 10px 65px; }
+.ui-timepicker-div td { font-size: 90%; }
+.ui-tpicker-grid-label { background: none; border: none; margin: 0; padding: 0; }
+
+.ui-timepicker-rtl{ direction: rtl; }
+.ui-timepicker-rtl dl { text-align: right; }
+.ui-timepicker-rtl dl dd { margin: 0 65px 10px 10px; }
+
+#popup-error.hidden {
+    display:none;
+}
+
+#popup-error {
+    background-color: #FFEBE8;
+    border-color: #CC0000;
+    border-width:1px;border-style:solid;
+    color:#333;
+    width:85%;
+    border-radius:3px;
+    padding: 2px 10px;
+    font-weight:bold;
+     margin: 5px 0 15px;
+     border:1px solid #CC0000;
+    background: #FFEBE8;
+    
+}
+
+.clearboth,
+.clear-both {
+    clear:both;
+}
+
+.mg-notice {
+    background: #FFFFE0;
+    padding-top:10px;
+    padding-bottom:10px;
+    overflow: hidden; 
+    -webkit-box-shadow: 0 0 5px black;
+    -moz-box-shadow:    0 0 5px black;
+    box-shadow:         0 0 5px black;
+    margin-top:10px;
+    width:50%;
+    font-size:12px;
+    line-height:12px;
+}
+
+.mg-notice.indent {
+    margin-left:25px;
+}
+
+.mg-notice p {
+    margin:0 10px;    
+}
+
+.popuppopup-close {
+    background:url(../images/close.png);
+    height:22px;
+    width:22px;
+    display:inline-block;
+}
+
+#push_close_button_slider_left, #push_close_button_slider_top {
+    float:left;
+}
+#push_close_button_slider_top {
+    height:200px;
+}
+
+#push_close_button_slider_left {
+    width:200px;
+}
+
+.show-instructions,
+.hide-instructions {
+    font-weight:normal;
+    color:#0000ff;
+    cursor:pointer;
+}
+.show-instructions:hover,
+.hide-instructions:hover {
+    color:#ff0000;
+}
+
+.show-instructions {
+    display:none;
+}
+.show-instructions,
+.hide-instructions {
+    font-size:12px;
+    margin-left:15px;
+}
+
+#poststuff .plugin-settings > h2 {
+    margin-top:10px;
+    margin-bottom:0px;
+    margin-left:0px;
+}
+
+p.small {
+    font-weight:normal;
+    font-size:12px;
+    line-height:12px;
+    margin:0;
+}
+
+.button.reset-horizontal,
+.button.reset-vertical {
+    width:100px;
+    height:15px;
+    float:left;
+}
+
+#ui-datepicker-div {
+    display:none;
+}
