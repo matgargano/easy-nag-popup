@@ -1,0 +1,30 @@
+.enp-image {
+  height:100%;
+  width:100%;
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:10000;
+  display:table;
+}
+
+
+.enp-image p {
+    display:table-cell;
+    vertical-align: middle;
+    width:100%;
+    height:100%;
+    text-align:center;
+}
+.enp-lightsout {
+    height:100%;
+    width:100%;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:1000;
+    display:table;
+    background:#000;
+    opacity:0.8;
+}
+

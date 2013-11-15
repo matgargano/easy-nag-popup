@@ -1,33 +1,36 @@
 <?php
 /*
-Plugin Name: Easy Nag Popup
-Plugin URI: http://www.matgargano.com
-Description: Creates a Fully Customizable Modal Window that Greets Users
-Version: 1.0
-Author: Mat Gargano
-Author Email: mgargano@gmail.com
-License:
-
-  Copyright 2012 Mat Gargano (matgargano.com)
-  This program is free software; you can redistribute it and/or modify
-  it under the terms of the GNU General Public License, version 2, as 
-  published by the Free Software Foundation.
-
-  This program is distributed in the hope that it will be useful,
-  but WITHOUT ANY WARRANTY; without even the implied warranty of
-  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-  GNU General Public License for more details.
-
-  You should have received a copy of the GNU General Public License
-  along with this program; if not, write to the Free Software
-  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+  Plugin Name: Easy Nag Popup
+  Plugin URI: http://matgargano.com
+  Description: Adds a nag popup to your site
+  Version: 2.0
+  Author: matstars
+  Author URI: http://matgargano.com
+  License: GPL2
 
 */
 
-/*
- * Include the necessary class to have a second featured image and instantiate the plugin's class, enabling the plugin
- *
- */
 
-foreach (glob(plugin_dir_path(__FILE__) . "class/*.php") as $filename) include $filename; 
-new easy_nag_popup;
+foreach ( glob( plugin_dir_path(__FILE__) . "inc/*.php" ) as $filename ) include $filename;
+
+Easy_nag_popup::init();
+Easy_nag_popup_admin::init();
+
+
+
+
+
+if ( !function_exists('sanitize_int') ) {
+  /**
+   *
+   * Sanitize integer
+   *
+   * @param $sanitizee
+   *
+   * @return int
+   */
+  function sanitize_int( $int ) {
+    return (int)$int;
+  }
+}
+

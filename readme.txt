@@ -8,12 +8,14 @@ Author URI:        http://matgargano.com
 Author:            Mat Gargano
 Requires at least: 3.2 
 Tested up to:      3.4.2
-Stable tag:        1.0
-Version:           1.0
+Stable tag:        2.0
+Version:           2.0
 
 == Description ==
 
 Easily create, modify and manage popup notifications for your users. A modal is an effective way to draw attention to vital pieces of information. The Easy Nag Popup plugin makes popups a snap!
+
+Acknowledgments: Serban Ghita (https://github.com/serbanghita) for Mobile-Detect and Marcus Westin (https://github.com/marcuswestin) for store.js.
 
 
 == Installation ==
@@ -36,10 +38,16 @@ Easily create, modify and manage popup notifications for your users. A modal is 
 
 Typically, I tell people to go no bigger than 850x550.
 
+= What type of customization does the plugin offer? =
+
+You can hide specifically mobile devices or tablets (interchangably) and you can choose to only show on the homepage.
+
 = Where can I get support? =
 
 You can reach the author on Twitter @matgargano or at his website http://matgargano.com
 
 == Changelog ==
-= 1.0 =
-* Initial Release
+
+= 2.0 =
+
+Rewrote the plugin from scratch.
