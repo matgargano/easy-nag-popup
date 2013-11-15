@@ -1,49 +1,56 @@
 <?php
 
 /**
- * Class Easy_nag_popup_admin
+ * This file contains methods that handle the administration of popups
+ *
+ * @package     EasyNagPopup
+ * @subpackage  Admin
+ * @license     http://www.gnu.org/licenses/gpl-2.0.html  GNU General Public License, version 2
+ * @author      Mat Gargano <mgargano@gmail.com>
+ * @version     2.1
  */
+
 class Easy_nag_popup_admin {
 
-
 	/**
-	 * @var string
+	 * @var string $text_domain Domain for this plugin/packages text so that it can be translated.
 	 */
+
 	public static $text_domain = 'easy_nag_popup';
 	/**
-	 * @var string
+	 * @var string $nonce_name Name to use for the security nonce when submitting data to be handled by the backend.
 	 */
+
 	public static $nonce_name = 'easy_nag_popup';
 
 	/**
-	 * @var string
+	 * @var string $ver The version of this package.
 	 */
+
 	public static $ver;
 
 	/**
-	 * @var string
+	 * @var string $file_name The file name we are going to use for JS/CSS/other assets relating to this package.
 	 */
+
 	public static $file_name;
 
-
 	/**
-	 * @var
+	 * @var array $post_meta The post meta to be saved with each post of post type Easy Nag Popup.
 	 */
+
 	public static $post_meta;
 
 	/**
-	 * @var
+	 * @var string $post_type The post type we are defining for this project
 	 */
 
 	public static $post_type;
 
-
 	/**
-	 *
-	 * Initialize plugin
+	 * Initialize this subpackage.
 	 *
 	 * @return void
-	 *
 	 */
 
 	public static function init(){
@@ -54,52 +61,52 @@ class Easy_nag_popup_admin {
 		add_action( 'load-post-new.php', array( __CLASS__, 'post_meta_boxes_setup' ) );
 		self::$post_meta = array(
 			array(
-				'name'=>'home_only',
-				'sanitize'=>'',
-				'description'=>'Only on the homepage?',
+				'name' => 'home_only',
+				'sanitize' => '',
+				'description' => __( 'Only display popup on the homepage?', self::$text_domain ),
 				'type' => 'checkbox',
 				'class' => '',
 			),
 			array(
-				'name'=>'hide_mobile',
-				'sanitize'=>'',
-				'description'=>'Hide on Mobile',
+				'name' => 'hide_mobile',
+				'sanitize' => '',
+				'description' => __( 'Do not display popup on mobile', self::$text_domain ),
 				'type' => 'checkbox',
 				'class' => '',
 			),
 			array(
-				'name'=>'hide_tablet',
-				'sanitize'=>'',
-				'description'=>'Hide on Tablet',
+				'name' => 'hide_tablet',
+				'sanitize' => '',
+				'description' => __( 'Do not display popup on tablets', self::$text_domain ),
 				'type' => 'checkbox',
 				'class' => '',
 			),
 			array(
-				'name'=>'url_to_send_user',
-				'sanitize'=>'esc_url',
-				'description'=>'URL to send user',
+				'name' => 'url_to_send_user',
+				'sanitize' => 'esc_url',
+				'description' => __( 'URL to send user that clicks on popup', self::$text_domain ),
 				'type' => 'text',
 			),
 			array(
-				'name'=>'open_new_window',
-				'sanitize'=>'',
-				'description'=>'Open in a new window',
+				'name' => 'open_new_window',
+				'sanitize' => '',
+				'description' => __( 'Open link in a new window', self::$text_domain ),
 				'type' => 'checkbox',
 				'class' => '',
 			),			
 			array(
-				'name'=>'number_times_to_show',
-				'sanitize'=>'sanitize_int',
-        'description'=>'Number of times to show modal to users',
+				'name' => 'number_times_to_show',
+				'sanitize' => 'sanitize_int',
+        		'description' => __( 'Number of times to show modal to users', self::$text_domain ),
 				'type' => 'text',
-				'class'=>'',
-        'default' => '1'
+				'class' => '',
+        		'default' => '1'
 			),
 			array(
-				'name'=>'hours_between_show',
-				'sanitize'=>'sanitize_int',
-				'description'=>'Number of hours to wait before showing a user the modal again',
-				'class'=>''
+				'name' => 'hours_between_show',
+				'sanitize' => 'sanitize_int',
+				'description' => __( 'Number of hours to wait before showing a user the modal again' ),
+				'class' => ''
 			),
 			
 
@@ -107,40 +114,33 @@ class Easy_nag_popup_admin {
 	}
 
 	/**
-	 *
-	 * Set up metaboxes
+	 * Adds meta box on the 'add_meta_boxes' hook. Adds save post meta on the 'save_post' hook.
 	 *
 	 * @return void
-	 *
 	 */
+
 	public static function post_meta_boxes_setup() {
-
-		/* Add meta boxes on the 'add_meta_boxes' hook. */
 		add_action( 'add_meta_boxes', array( __CLASS__, 'add_post_meta_boxes' ) );
-
-		/* Save post meta on the 'save_post' hook. */
 		add_action( 'save_post', array( __CLASS__, 'save_post_class_meta' ), 10, 2 );
 	}
 
 	/**
-	 *
-	 * Add meta boxes
+	 * Add and attach meta box to Easy Nag Popup post type.
 	 *
 	 * @return void
-	 *
 	 */
+
 	public static function add_post_meta_boxes() {
 		add_meta_box( 'easy-nag-popup', esc_html__( 'Easy Nag Popup Settings', self::$text_domain ), array( __CLASS__, 'post_class_meta_box' ), self::$post_type, 'normal', 'default' );
 	}
 
 	/**
+	 * Prepare and display the meta box's contents
 	 *
-	 * Output meta elements
-	 *
-	 * @param $post
+	 * @param object $post post object
 	 * @return void
-	 *
 	 */
+
 	public static function post_class_meta_box( $post ) { ?>
 
 		<?php wp_nonce_field( basename( __FILE__ ), self::$nonce_name ); ?>
@@ -167,16 +167,15 @@ class Easy_nag_popup_admin {
 		<?php endforeach; ?>
 	<?php }
 
-
 	/**
+	 * Handle the saving of meta data for the Easy Nag Popup posts
 	 *
-	 * Hook onto save action
+	 * @param int $post_id The post id.
+	 * @param object $post The post object.
 	 *
-	 * @param $post_id
-	 * @param $post
-	 *
-	 * @return bool
+	 * @return bool Returns true if completes the save action.
 	 */
+
 	public static function save_post_class_meta( $post_id, $post ) {
 
 		/* Verify the nonce before proceeding. */

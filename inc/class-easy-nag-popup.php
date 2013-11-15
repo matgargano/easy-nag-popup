@@ -1,41 +1,52 @@
 <?php
 
-
 /**
- * Class Easy_nag_popup
+ * This file contains methods that handle the displaying of popups
+ *
+ * @package     EasyNagPopup
+ * @subpackage  Display
+ * @license     http://www.gnu.org/licenses/gpl-2.0.html  GNU General Public License, version 2
+ * @author      Mat Gargano <mgargano@gmail.com>
+ * @version     2.1
  */
+
 class Easy_nag_popup {
 
 	/**
-	 * @var string
+     * @var string $post_type The post type we are defining for this project
 	 */
+
 	public static $post_type = 'easy_nag_popup';
-	/**
-	 * @var string
+	
+    /**
+	 * @var string $file_name The file name we are going to use for JS/CSS/other assets relating to this package
 	 */
+
 	public static $file_name = 'easy-nag-popup';
-	/**
-	 * @var string
+	
+    /**
+     * @var string $ver The version of this package.
 	 */
-	public static $ver = '2.0';
 
-
-
-
+	public static $ver = '2.1';
 
 	/**
-	 * initialize the plugin
+     * Initialize this subpackage.
 	 *
 	 * @return void
-	 *
 	 */
+
 	public static function init(){
 		add_action( 'init', array( __CLASS__, 'register_post_type' ) );
 		add_action( 'wp_enqueue_scripts', array( __CLASS__, 'enqueue' ) );
 		
 	}
 
-
+	/**
+	 * Obtains the latest easy nag popup's post id
+	 *
+	 * @return int $id the post's ID
+	 */
 
 	public static function latest_active(){
 		if ( is_admin() ) return;
@@ -46,13 +57,13 @@ class Easy_nag_popup {
 		wp_reset_postdata();
         return $id;
 	}
+
 	/**
-	 *
-	 * Register the post type
+	 * Registers the post type for the easy nag popups
 	 *
 	 * @return void
-	 *
 	 */
+
 	public static function register_post_type(){
 		$labels = array(
 			'name'               => 'Easy Nag Popup',
@@ -85,16 +96,13 @@ class Easy_nag_popup {
 
 		register_post_type( self::$post_type, $args );
 	}
-
 	
-
 	/**
-	 *
-	 * Enqueue scripts
+	 * Enqueues scripts for this package/plugin
 	 *
 	 * @return void
-	 *
 	 */
+
 	static function enqueue(){
 		if ( is_admin() ) return;
         $post_id = self::latest_active();
@@ -129,6 +137,12 @@ class Easy_nag_popup {
 		
 	}
 
+	/**
+	 * Gets easy nag popup posts using the WP_Query class
+	 *
+	 * @return array $args list of arguments to override defaults
+	 */
+
 	static function get( $args = null ){
 		$args = (array)$args;
 		$defaults = array(
@@ -142,10 +156,4 @@ class Easy_nag_popup {
 		$results = new WP_Query( $args );
 		return $results;
 	}
-
-
-
-
-
 }
-

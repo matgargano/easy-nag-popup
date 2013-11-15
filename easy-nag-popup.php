@@ -11,7 +11,12 @@
 */
 
 
-foreach ( glob( plugin_dir_path(__FILE__) . "inc/*.php" ) as $filename ) include $filename;
+if ( is_admin() ){
+  include( 'inc/class-easy-nag-popup-admin.php' )
+} else {
+  include( 'inc/mobile-detect.php' )
+  include( 'inc/class-easy-nag-popup.php' )
+}
 
 Easy_nag_popup::init();
 Easy_nag_popup_admin::init();
@@ -25,9 +30,8 @@ if ( !function_exists('sanitize_int') ) {
    *
    * Sanitize integer
    *
-   * @param $sanitizee
-   *
-   * @return int
+   * @param mixed $sanitizee variable that needs to be sanitized
+   * @return int sanitized integer
    */
   function sanitize_int( $int ) {
     return (int)$int;
