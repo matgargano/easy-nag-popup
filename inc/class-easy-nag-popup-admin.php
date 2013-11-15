@@ -104,7 +104,7 @@ class Easy_nag_popup_admin {
 			),
 			array(
 				'name' => 'hours_between_show',
-				'sanitize' => 'sanitize_int',
+				'sanitize' => 'sanitize_float',
 				'description' => __( 'Number of hours to wait before showing a user the modal again' ),
 				'class' => ''
 			),
