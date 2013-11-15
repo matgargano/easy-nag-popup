@@ -50,7 +50,6 @@ class Easy_nag_popup_admin {
 		self::$post_type = Easy_nag_popup::$post_type;
 		self::$ver = Easy_nag_popup::$ver;
 		self::$file_name = Easy_nag_popup::$file_name;
-		add_action( 'admin_print_scripts-post.php', array( __CLASS__, 'admin_enqueue' ), 11 );
 		add_action( 'load-post.php', array( __CLASS__, 'post_meta_boxes_setup' ) );
 		add_action( 'load-post-new.php', array( __CLASS__, 'post_meta_boxes_setup' ) );
 		self::$post_meta = array(
