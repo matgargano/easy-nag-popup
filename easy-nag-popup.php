@@ -1,4 +1,16 @@
 <?php
+
+/**
+ * Main plugin functions and setting up plugin.
+ *
+ * @package     EasyNagPopup
+ * @subpackage  Admin
+ * @license     http://www.gnu.org/licenses/gpl-2.0.html  GNU General Public License, version 2
+ * @author      Mat Gargano <mgargano@gmail.com>
+ * @version     2.1
+ */
+
+
 /*
   Plugin Name: Easy Nag Popup
   Plugin URI: http://matgargano.com
@@ -8,17 +20,6 @@
   Author URI: http://matgargano.com
   License: GPL2
 */
-
-/**
- * This file contains methods that handle the administration of popups
- *
- * @package     EasyNagPopup
- * @subpackage  Admin
- * @license     http://www.gnu.org/licenses/gpl-2.0.html  GNU General Public License, version 2
- * @author      Mat Gargano <mgargano@gmail.com>
- * @version     2.1
- */
-
 
 if ( is_admin() ){
   include( 'inc/class-easy-nag-popup-admin.php' )
