@@ -7,7 +7,7 @@
  * @subpackage  Admin
  * @license     http://www.gnu.org/licenses/gpl-2.0.html  GNU General Public License, version 2
  * @author      Mat Gargano <mgargano@gmail.com>
- * @version     2.1.7
+ * @version     2.1.7.1
  */
 
 class Easy_nag_popup_admin {

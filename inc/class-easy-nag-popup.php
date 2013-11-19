@@ -7,7 +7,7 @@
  * @subpackage  Display
  * @license     http://www.gnu.org/licenses/gpl-2.0.html  GNU General Public License, version 2
  * @author      Mat Gargano <mgargano@gmail.com>
- * @version     2.1.7
+ * @version     2.1.7.1
  */
 
 class Easy_nag_popup {
@@ -28,7 +28,7 @@ class Easy_nag_popup {
      * @var string $ver The version of this package.
 	 */
 
-	public static $ver = '2.1.7';
+	public static $ver = '2.1.7.1';
 
 	/**
      * Initialize this subpackage.
@@ -51,6 +51,7 @@ class Easy_nag_popup {
 	public static function latest_active(){
 		if ( is_admin() ) return;
 		$posts = self::get();
+        if ( ! $posts->found_posts ) return;
 		while ( $posts->have_posts() ) : $posts->the_post(); 
 		  $id = get_the_ID();
 		endwhile;

@@ -2,14 +2,13 @@
 
 Contributors:      matstars
 Plugin Name:       Easy Nag Popup
-
 Tags:              nag screen, modal, nag window, popup, nag, nag popup
 Author URI:        http://matgargano.com
 Author:            Mat Gargano
 Requires at least: 3.2 
 Tested up to:      3.7.1
-Stable tag:        2.1.7
-Version:           2.1.7
+Stable tag:        2.1.7.1
+Version:           2.1.7.1
 
 == Description ==
 

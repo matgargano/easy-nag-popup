@@ -7,15 +7,15 @@
  * @subpackage  Admin
  * @license     http://www.gnu.org/licenses/gpl-2.0.html  GNU General Public License, version 2
  * @author      Mat Gargano <mgargano@gmail.com>
- * @version     2.1.7
+ * @version     2.1.7.1
  */
 
 
 /*
   Plugin Name: Easy Nag Popup
   Plugin URI: http://matgargano.com
-  Description: Adds a nag popup to your site
-  Version: 2.1.7
+  Description: Provides you with a rich and easy way to add a nag popup to your website.
+  Version: 2.1.7.1
   Author: matstars
   Author URI: http://matgargano.com
   License: GPL2
