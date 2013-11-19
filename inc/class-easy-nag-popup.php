@@ -7,7 +7,7 @@
  * @subpackage  Display
  * @license     http://www.gnu.org/licenses/gpl-2.0.html  GNU General Public License, version 2
  * @author      Mat Gargano <mgargano@gmail.com>
- * @version     2.1.5
+ * @version     2.1.7
  */
 
 class Easy_nag_popup {
@@ -28,7 +28,7 @@ class Easy_nag_popup {
      * @var string $ver The version of this package.
 	 */
 
-	public static $ver = '2.1.5';
+	public static $ver = '2.1.7';
 
 	/**
      * Initialize this subpackage.
